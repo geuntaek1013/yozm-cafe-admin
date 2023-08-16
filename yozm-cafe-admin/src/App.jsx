@@ -64,33 +64,11 @@ function App() {
 
     const formData = new FormData();
     formData.append("request", json);
-    // formData.append("address", address);
     images.forEach((image) => formData.append("images", image));
-
-    // formData.append(
-    //   "detail",
-    //   JSON.stringify({
-    //     openingHours,
-    //     phone,
-    //     mapUrl,
-    //     description,
-    //   })
-    // );
-
-    // formData.append("det[zzzphone]", phone);
-    // formData.append(`detail[openingHours]`, openingHours);
-    // formData.append("detail[phone]", phone);
-    // formData.append("detail[mapUrl]", mapUrl);
-    // formData.append("detail[description]", description);
-
-    // console.log("form", formData);
-    // const headers = new Headers();
-    // headers.append("Content-Type", "multipart/form-data");
 
     try {
       const response = await fetch("api/admin/cafes", {
         method: "POST",
-        // headers: headers,
         body: formData,
       });
 
